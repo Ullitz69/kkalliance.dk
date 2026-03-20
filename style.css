@@ -1,39 +1,35 @@
-/* HEADER */
-.header {
+/* TOPBAR */
+.topbar {
+  background-color: black;
+  padding: 15px 0;
   text-align: center;
-  background-color: #0B3D91;
-  padding: 20px 0;
 }
 
 /* LOGO */
 .logo {
-  margin-bottom: 10px;
+  margin: 0 0 10px 0;
 }
 
-/* MENU BOX MED STREGER */
-.menu-box {
-  border-top: 2px solid white;
-  border-bottom: 2px solid white;
-  padding: 10px 0;
-  margin: 0 auto;
-  width: 60%;
-}
-
-/* NAV LINKS */
+/* NAV */
 .nav-links {
   list-style: none;
   display: flex;
-  justify-content: center;
+  justify-content: center;   /* CENTRER MENU */
   gap: 40px;
   margin: 0;
   padding: 0;
 }
 
-/* LINKS */
-.nav-links a {
+/* LINKS + BUTTON */
+.nav-links a,
+.dropbtn {
   color: white;
   text-decoration: none;
   font-weight: bold;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
 }
 
 /* DROPDOWN */
@@ -50,15 +46,10 @@
   list-style: none;
   padding: 10px;
   margin: 0;
-  min-width: 120px;
+  min-width: 140px;
 }
 
-/* VIS DROPDOWN */
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-/* DROPDOWN LINKS */
+/* LINKS I DROPDOWN */
 .dropdown-menu li {
   padding: 5px 10px;
 }
