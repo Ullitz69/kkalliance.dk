@@ -6,7 +6,7 @@ body {
 
 /* HEADER (BLÅ BAGGRUND + HVID TEKST) */
 .header {
-  text-align: center;
+  text-align: left corners; /* venstrestillet tekst */
   background-color: #0B3D91;  /* blå header */
   color: white;               /* gør tekst i header hvid */
   padding: 20px 0;
