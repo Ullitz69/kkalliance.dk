@@ -1,6 +1,6 @@
 /* TOPBAR */
 .topbar {
-  background-color: black;
+  background-color: #0e25f0;
   padding: 15px 0;
   text-align: center;
 }
@@ -44,16 +44,16 @@
   top: 30px;
   background-color: black;
   list-style: none;
-  padding: 10px;
+  padding: 15px;
   margin: 0;
   min-width: 140px;
 }
 
 /* LINKS I DROPDOWN */
 .dropdown-menu li {
-  padding: 5px 10px;
+  padding: 10px 10px;
 }
 
 .dropdown-menu a {
-  color: white;
+  color: rgb(0, 0, 0);
 }
