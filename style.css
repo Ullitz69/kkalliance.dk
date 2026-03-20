@@ -1,6 +1,53 @@
 body {
-  font-family: Arial;
-  background: #0B3D91;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #0B3D91;
   color: white;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  padding: 15px 30px;
+}
+
+.logo {
+  margin: 0;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* HERO */
+.hero {
   text-align: center;
+  padding: 80px 20px;
+  background: url("billeder/hold.jpg") center/cover no-repeat;
+}
+
+/* CONTENT */
+.content {
+  padding: 40px;
+}
+
+.card {
+  background-color: rgba(0,0,0,0.6);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
 }
