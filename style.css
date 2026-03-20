@@ -1,7 +1,14 @@
-/* HEADER */
+/* HELE SIDEN */
+body {
+  margin: 0;                 /* fjerner default margin */
+  font-family: Arial, sans-serif;
+}
+
+/* HEADER (BLÅ BAGGRUND + HVID TEKST) */
 .header {
   text-align: center;
-  background-color: #0B3D91;
+  background-color: #0B3D91;  /* blå header */
+  color: white;               /* gør tekst i header hvid */
   padding: 20px 0;
 }
 
@@ -12,8 +19,8 @@
 
 /* MENU BOX MED STREGER */
 .menu-box {
-  border-top: 2px solid white;
-  border-bottom: 2px solid white;
+  border-top: 2px solid white;    /* øverste linje */
+  border-bottom: 2px solid white; /* nederste linje */
   padding: 10px 0;
   margin: 0 auto;
   width: 60%;
@@ -29,31 +36,31 @@
   padding: 0;
 }
 
-/* LINKS */
+/* LINKS I HEADER */
 .nav-links a {
-  color: white;
+  color: white;              /* hvid tekst i menu */
   text-decoration: none;
   font-weight: bold;
 }
 
-/* DROPDOWN */
+/* DROPDOWN CONTAINER */
 .dropdown {
   position: relative;
 }
 
-/* HIDDEN MENU */
+/* DROPDOWN MENU */
 .dropdown-menu {
   display: none;
   position: absolute;
   top: 30px;
-  background-color: black;
+  background-color: black;   /* sort baggrund */
   list-style: none;
   padding: 10px;
   margin: 0;
   min-width: 120px;
 }
 
-/* VIS DROPDOWN */
+/* VIS DROPDOWN (hover version - du bruger måske JS i stedet) */
 .dropdown:hover .dropdown-menu {
   display: block;
 }
@@ -65,4 +72,23 @@
 
 .dropdown-menu a {
   color: white;
+}
+
+/* ========================= */
+/* INDHOLD (UNDER HEADER) */
+/* ========================= */
+
+.content {
+  background-color: white;   /* hvid baggrund */
+  color: black;              /* sort tekst */
+  padding: 40px;
+}
+
+/* CARDS (fx nyheder) */
+.card {
+  background-color: #f5f5f5; /* lys grå */
+  color: black;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
 }
