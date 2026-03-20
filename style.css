@@ -1,35 +1,39 @@
-/* TOPBAR */
-.topbar {
-  background-color: #0e25f0;
-  padding: 15px 0;
+/* HEADER */
+.header {
   text-align: center;
+  background-color: #0B3D91;
+  padding: 20px 0;
 }
 
 /* LOGO */
 .logo {
-  margin: 0 0 10px 0;
+  margin-bottom: 10px;
 }
 
-/* NAV */
+/* MENU BOX MED STREGER */
+.menu-box {
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  padding: 10px 0;
+  margin: 0 auto;
+  width: 60%;
+}
+
+/* NAV LINKS */
 .nav-links {
   list-style: none;
   display: flex;
-  justify-content: center;   /* CENTRER MENU */
+  justify-content: center;
   gap: 40px;
   margin: 0;
   padding: 0;
 }
 
-/* LINKS + BUTTON */
-.nav-links a,
-.dropbtn {
+/* LINKS */
+.nav-links a {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
 }
 
 /* DROPDOWN */
@@ -44,16 +48,21 @@
   top: 30px;
   background-color: black;
   list-style: none;
-  padding: 15px;
+  padding: 10px;
   margin: 0;
-  min-width: 140px;
+  min-width: 120px;
 }
 
-/* LINKS I DROPDOWN */
+/* VIS DROPDOWN */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* DROPDOWN LINKS */
 .dropdown-menu li {
-  padding: 10px 10px;
+  padding: 5px 10px;
 }
 
 .dropdown-menu a {
-  color: rgb(0, 0, 0);
+  color: white;
 }
