@@ -1,49 +1,53 @@
-/* HELE SIDEN */
-body {
-  margin: 0;                 /* fjerner default margin */
-  font-family: Arial, sans-serif;
-}
-
-/* HEADER (BLÅ BAGGRUND + HVID TEKST) */
+/* HEADER */
 .header {
-  text-align: left corners; /* venstrestillet tekst */
-  background-color: #0B3D91;  /* blå header */
-  color: white;               /* gør tekst i header hvid */
-  padding: 20px 0;
+  background-color: #0B3D91;
+  color: white;
 }
 
-/* LOGO */
+/* TOPBAR = GRID (VENSTRE + CENTER) */
+.topbar {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 15px 30px;
+}
+
+/* LOGO (VENSTRE) */
 .logo {
-  margin-bottom: 10px;
+  justify-self: start;     /* venstre */
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 22px;
 }
 
-/* MENU BOX MED STREGER */
-.menu-box {
-  border-top: 2px solid white;    /* øverste linje */
-  border-bottom: 2px solid white; /* nederste linje */
-  padding: 10px 0;
-  margin: 0 auto;
-  width: 60%;
+/* NAV (CENTER) */
+nav {
+  justify-self: center;    /* centrer menu */
 }
 
 /* NAV LINKS */
 .nav-links {
   list-style: none;
   display: flex;
-  justify-content: center;
   gap: 40px;
   margin: 0;
   padding: 0;
 }
 
-/* LINKS I HEADER */
-.nav-links a {
-  color: white;              /* hvid tekst i menu */
+/* LINKS */
+.nav-links a,
+.dropbtn {
+  color: white;
   text-decoration: none;
   font-weight: bold;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
 }
 
-/* DROPDOWN CONTAINER */
+/* DROPDOWN */
 .dropdown {
   position: relative;
 }
@@ -53,25 +57,15 @@ body {
   display: none;
   position: absolute;
   top: 30px;
-  background-color: black;   /* sort baggrund */
+  background-color: black;
   list-style: none;
   padding: 10px;
   margin: 0;
-  min-width: 120px;
 }
 
-/* VIS DROPDOWN (hover version - du bruger måske JS i stedet) */
-.dropdown:hover .dropdown-menu {
+/* VIS MED JS (ikke hover) */
+.dropdown-menu.show {
   display: block;
-}
-
-/* DROPDOWN LINKS */
-.dropdown-menu li {
-  padding: 5px 10px;
-}
-
-.dropdown-menu a {
-  color: white;
 }
 
 /* ========================= */
