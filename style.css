@@ -45,13 +45,6 @@ ul {
   margin: 0 auto;      /*centrerer */
 }
 
-/* GLOBAL CONTAINER */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 30px;
-}
-
 /* VENSTRE / HØJRE */
 .nav-left {
   justify-self: start;
@@ -247,10 +240,16 @@ ul {
 /* ========================= */
 /* CONTENT / FULL WIDTH FIX */
 /* ========================= */
+/*CONTAINER */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
 
 .content {
   width: 100%;
-  padding: 40px 20px;
+  padding: 40px 0;
   box-sizing: border-box;
 }
 
