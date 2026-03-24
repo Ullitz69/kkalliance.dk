@@ -4,7 +4,7 @@
   color: white;
 }
 
-/* TOPBAR = GRID (VENSTRE + CENTER) */
+/* GRID LAYOUT (VENSTRE - CENTER - HØJRE) */
 .topbar {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
@@ -12,30 +12,35 @@
   padding: 15px 30px;
 }
 
-/* LOGO (VENSTRE) */
+/* VENSTRE MENU */
+.nav-left {
+  justify-self: start;
+}
+
+/* HØJRE MENU */
+.nav-right {
+  justify-self: end;
+}
+
+/* LOGO I MIDTEN */
 .logo {
-  justify-self: start;     /* venstre */
+  justify-self: center;
   color: white;
   text-decoration: none;
   font-weight: bold;
   font-size: 22px;
 }
 
-/* NAV (CENTER) */
-nav {
-  justify-self: center;    /* centrer menu */
-}
-
 /* NAV LINKS */
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 40px;
+  gap: 30px;
   margin: 0;
   padding: 0;
 }
 
-/* LINKS */
+/* LINKS / BUTTONS */
 .nav-links a,
 .dropbtn {
   color: white;
@@ -44,7 +49,7 @@ nav {
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 /* DROPDOWN */
@@ -56,33 +61,15 @@ nav {
 .dropdown-menu {
   display: none;
   position: absolute;
-  top: 30px;
+  top: 35px;
   background-color: black;
-  list-style: none;
   padding: 10px;
+  list-style: none;
   margin: 0;
+  border-radius: 4px;
 }
 
-/* VIS MED JS (ikke hover) */
+/* SHOW VIA JS */
 .dropdown-menu.show {
   display: block;
-}
-
-/* ========================= */
-/* INDHOLD (UNDER HEADER) */
-/* ========================= */
-
-.content {
-  background-color: white;   /* hvid baggrund */
-  color: black;              /* sort tekst */
-  padding: 40px;
-}
-
-/* CARDS (fx nyheder) */
-.card {
-  background-color: #f5f5f5; /* lys grå */
-  color: black;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 8px;
 }
