@@ -45,6 +45,13 @@ ul {
   margin: 0 auto;      /*centrerer */
 }
 
+/* GLOBAL CONTAINER */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
 /* VENSTRE / HØJRE */
 .nav-left {
   justify-self: start;
