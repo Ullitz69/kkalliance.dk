@@ -48,3 +48,32 @@
   background-color: #0B3D91;
   border-radius: 4px;
 }
+/* ========================= */
+/* UNDERLINE HOVER ANIMATION */
+/* ========================= */
+
+.nav-links a,
+.dropbtn {
+  position: relative;
+}
+
+/* selve linjen */
+.nav-links a::after,
+.dropbtn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+
+  width: 0%;
+  height: 2px;
+  background-color: white;
+
+  transition: width 0.3s ease;
+}
+
+/* hover = animér linje */
+.nav-links a:hover::after,
+.dropbtn:hover::after {
+  width: 100%;
+}
