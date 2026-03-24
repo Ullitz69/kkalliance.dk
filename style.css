@@ -31,8 +31,9 @@ ul {
 .topbar {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  padding: 15px 30px;
+  align-items: center; /*centrer ALT vertikalt */
+  height: 80px; /*fast højde giver stabil alignment */
+  padding: 0 30px;
 }
 
 /* VENSTRE / HØJRE */
@@ -64,6 +65,7 @@ ul {
 .nav-links {
   display: flex;
   gap: 30px;
+  align-items: center; /* centrer tekst */
 }
 
 /* 🔥 FJERN DEFAULT BUTTON STYLING */
@@ -87,6 +89,8 @@ ul {
 .dropbtn {
   display: inline-block;
   position: relative;
+  padding: 10px 0;
+
 }
 
 /* DROPDOWN */
