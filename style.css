@@ -20,7 +20,7 @@ ul {
 .header {
   background-color: #0B3D91;
   color: white;
-
+  width: 100%;
   position: sticky;
   top: 0;
   z-index: 1000;
