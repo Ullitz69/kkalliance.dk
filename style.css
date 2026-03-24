@@ -161,3 +161,57 @@ box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 .dropbtn:hover::after {
   width: 100%;
 }
+
+/* BURGER (hidden desktop) */
+.burger {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+  .topbar {
+    grid-template-columns: auto auto;
+  }
+
+  .logo {
+    justify-self: start;
+  }
+
+  .burger {
+    display: block;
+    justify-self: end;
+  }
+
+  /* skjul menu */
+  .nav-left,
+  .nav-right {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #0B3D91;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  /* vis når aktiv */
+  .nav-left.active,
+  .nav-right.active {
+    display: flex;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 15px;
+  }
+}

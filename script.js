@@ -27,3 +27,12 @@ window.addEventListener("scroll", function () {
     header.classList.remove("scrolled");
   }
 });
+/* BURGER MENU */
+const burger = document.querySelector(".burger");
+const navLeft = document.querySelector(".nav-left");
+const navRight = document.querySelector(".nav-right");
+
+burger.addEventListener("click", () => {
+  navLeft.classList.toggle("active");
+  navRight.classList.toggle("active");
+});
