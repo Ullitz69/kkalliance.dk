@@ -59,9 +59,6 @@
 
 /* selve linjen */
 .nav-links a::after,
-.dropbtn {
-  display: inline-block; /* vigtigt */
-}
 .dropbtn::after {
   content: "";
   position: absolute;
