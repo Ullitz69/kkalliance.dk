@@ -93,7 +93,7 @@ ul {
   left: 0;
 
  background-color: #0B3D91;
-box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+ box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   padding: 10px;
   list-style: none;
   margin: 0;
@@ -214,4 +214,27 @@ box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     flex-direction: column;
     gap: 15px;
   }
+}
+
+/* ========================= */
+/* CONTENT / FULL WIDTH FIX */
+/* ========================= */
+
+.content {
+  width: 100%;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+/* cards fylder hele bredden */
+.card {
+  width: 100%;
+  box-sizing: border-box;
+
+  background-color: #0B3D91;
+  color: white;
+
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
 }
