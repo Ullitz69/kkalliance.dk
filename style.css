@@ -236,7 +236,7 @@ ul {
 
 /* cards fylder hele bredden */
 .card {
-  width: 100%;
+  width: 10%;
   box-sizing: border-box;
 
   background-color: #0B3D91;
@@ -260,8 +260,8 @@ ul {
 
 /* billede */
 .player-card.pro img {
-  width: 20%;
-  height: 20%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   display: block;
 }
