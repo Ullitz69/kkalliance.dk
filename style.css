@@ -52,6 +52,14 @@ ul {
   font-size: 22px;
 }
 
+.logo img {
+  height: 45px;
+  width: auto;
+  display: block;
+  display: flex;
+  align-items: center;
+}
+
 /* NAV LINKS */
 .nav-links {
   display: flex;
