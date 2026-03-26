@@ -69,6 +69,18 @@ ul {
   display: flex;
   align-items: center;
 }
+/* Baggrunds billede */ 
+.hero {
+  background-image: url("billeder/Hold/Hold.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+
+  display: flex;
+  align-items: center;
+
+  color: white;
+}
 
 /* NAV LINKS */
 .nav-links {
