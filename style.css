@@ -77,7 +77,7 @@ ul {
   background-position: center;
   background-repeat: no-repeat;
 
-  height: 500px; /* lidt større */
+  height: 300px; /* lidt større */
 
   display: flex;
   align-items: center;
