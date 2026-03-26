@@ -69,6 +69,7 @@ ul {
   display: flex;
   align-items: center;
 }
+
 /* Baggrunds billede */ 
 .hero {
   background-image: url("billeder/Hold/Hold.jpg");
@@ -93,6 +94,10 @@ ul {
   background: rgba(0,0,0,0.4);
 }
 
+.hero {
+  height: 60vh; /* dynamisk højde */
+}
+
 /* sørger for tekst ligger OVER overlay */
 .hero .container {
   position: relative;
@@ -106,7 +111,7 @@ ul {
   align-items: center; /* centrer tekst */
 }
 
-/* 🔥 FJERN DEFAULT BUTTON STYLING */
+/* FJERN DEFAULT BUTTON STYLING */
 .dropbtn {
   background: none;
   border: none;
