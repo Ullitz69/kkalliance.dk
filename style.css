@@ -74,13 +74,14 @@ ul {
 .hero {
   background-image: url("billeder/Hold/Hold.jpg");
   background-size: cover;
-  background-position: center;
+  background-position: center 20%; /* 🔥 flyt fokus op */
   background-repeat: no-repeat;
 
-  height: 300px; /* lidt større */
+  height: 60vh;
 
   display: flex;
   align-items: center;
+  justify-content: center; /* centrer tekst */
 
   color: white;
   position: relative;
