@@ -80,6 +80,25 @@ ul {
   align-items: center;
 
   color: white;
+
+  
+  position: relative;
+}
+
+.hero {
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
 }
 
 /* NAV LINKS */
