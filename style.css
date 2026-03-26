@@ -29,6 +29,25 @@ ul {
   transition: box-shadow 0.3s ease;
 }
 
+.section-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 40px 0 20px;
+  color: #0B3D91;
+  position: relative;
+  padding-left: 15px;
+}
+
+.section-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 5px;
+  height: 20px;
+  width: 4px;
+  background-color: blue;
+}
+
 .header.scrolled {
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
@@ -296,6 +315,9 @@ ul {
   margin-bottom: 20px;
   border-radius: 10px;
 }
+
+
+
 
 /* ========================= */
 /* PRO PLAYER CARDS */
