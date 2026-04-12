@@ -36,3 +36,34 @@ burger.addEventListener("click", () => {
   navLeft.classList.toggle("active");
   navRight.classList.toggle("active");
 });
+
+// Player cards on hold page: click or Enter opens player profile page.
+const playerCards = document.querySelectorAll(".player-grid .player-card");
+
+if (playerCards.length > 0) {
+  playerCards.forEach(card => {
+    const name = card.querySelector("h4")?.textContent?.trim() || "Spiller";
+    const number = card.querySelector(".number")?.textContent?.trim() || "";
+    const position = card.closest(".player-grid")?.previousElementSibling?.textContent?.trim() || "Spiller";
+
+    card.setAttribute("tabindex", "0");
+    card.setAttribute("role", "link");
+    card.setAttribute("aria-label", `Se profil for ${name}`);
+
+    const goToProfile = () => {
+      const params = new URLSearchParams({
+        name,
+        number,
+        position
+      });
+      window.location.href = `spiller.html?${params.toString()}`;
+    };
+
+    card.addEventListener("click", goToProfile);
+    card.addEventListener("keydown", event => {
+      if (event.key === "Enter") {
+        goToProfile();
+      }
+    });
+  });
+}

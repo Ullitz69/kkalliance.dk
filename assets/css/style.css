@@ -606,9 +606,15 @@ footer a:hover {
   position: relative;
   border-radius: 12px;
   overflow: hidden;
+  cursor: pointer;
 
   height: 260px; /* 🔥 fast størrelse */
   width: 100%;
+}
+
+.player-card.pro:focus-visible {
+  outline: 3px solid #0B3D91;
+  outline-offset: 3px;
 }
 /* mørk gradient overlay */
 .player-card.pro::after {
@@ -797,4 +803,49 @@ footer a:hover {
   .membership-options {
     grid-template-columns: 1fr;
   }
+}
+
+/* ========================= */
+/* SPILLERPROFIL */
+/* ========================= */
+
+.player-profile {
+  max-width: 900px;
+}
+
+.player-profile-card {
+  margin-top: 14px;
+  background: #f5f7fa;
+  border: 1px solid #d9e2f0;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.player-profile-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.profile-number {
+  background: #0B3D91;
+  color: white;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 6px 12px;
+}
+
+.profile-position {
+  font-weight: 700;
+  color: #0B3D91;
+}
+
+.player-profile-card h2 {
+  margin: 0 0 10px;
+}
+
+.player-profile-card p {
+  margin: 0;
+  line-height: 1.7;
 }
