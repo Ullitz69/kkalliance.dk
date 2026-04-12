@@ -702,6 +702,71 @@ footer a:hover {
   border-color: #0B3D91;
 }
 
+/* ========================= */
+/* INSTAGRAM (FORSIDE) */
+/* ========================= */
+
+.instagram-section {
+  margin-top: 30px;
+}
+
+.instagram-section h2 {
+  margin-bottom: 10px;
+}
+
+.instagram-section > p {
+  margin: 0 0 14px;
+  color: #25324a;
+}
+
+.instagram-card {
+  background: #f5f7fa;
+  border: 1px solid #d9e2f0;
+  border-radius: 10px;
+  padding: 20px 24px;
+}
+
+.instagram-card h3 {
+  margin: 0 0 8px;
+  color: #0B3D91;
+}
+
+.instagram-card p {
+  margin: 0 0 16px;
+  line-height: 1.6;
+}
+
+.instagram-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.instagram-btn {
+  display: inline-block;
+  text-decoration: none;
+  background: #0B3D91;
+  color: white;
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+
+.instagram-btn:hover {
+  background: #0a357e;
+}
+
+.instagram-link {
+  color: #0B3D91;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.instagram-link:hover {
+  text-decoration: underline;
+}
+
 .membership-detail p {
   line-height: 1.7;
 }
