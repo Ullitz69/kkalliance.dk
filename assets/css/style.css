@@ -399,6 +399,94 @@ footer a:hover {
     align-items: flex-start;
   }
 
+/* Signup / player transfer form */
+.signup {
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.player-form {
+  max-width: 600px;
+  width: 100%;
+  background: #f5f7fa;
+  border-left: 4px solid #0B3D91;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  box-sizing: border-box;
+}
+
+.player-form h2 {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  color: #0B3D91;
+}
+
+.player-form p {
+  margin: 0 0 14px 0;
+  color: rgba(0,0,0,0.85);
+  line-height: 1.4;
+}
+
+.player-form .form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.player-form label {
+  font-size: 0.95rem;
+  color: rgba(0,0,0,0.85);
+}
+
+.player-form input[type="text"],
+.player-form input[type="email"],
+.player-form input[type="tel"],
+.player-form input[type="date"] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 6px;
+  background: #ffffff;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.player-form .checkbox-row {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.player-form input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+}
+
+.player-form .btn-submit {
+  width: 100%;
+  padding: 12px 14px;
+  background-color: #0B3D91;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.player-form .btn-submit:hover,
+.player-form .btn-submit:focus {
+  background-color: #092f72;
+  outline: none;
+}
+
+@media (max-width: 420px) {
+  .player-form { padding: 14px; }
+}
+
   .dropbtn {
     padding: 10px 0;
     width: 100%;

@@ -80,6 +80,54 @@
 
     <p><a class="back-link" href="medlemskab.html">Tilbage til medlemskab</a></p>
   </section>
+  
+  <section class="signup">
+    <div class="player-form" role="region" aria-labelledby="signup-title">
+      <h2 id="signup-title">Klubskifte – Bliv spiller</h2>
+      <p>Udfyld formularen for at skifte til klubben. Vi opretter dit spillercertifikat. Du er først spilleklar, når det er godkendt.</p>
+
+      <form method="POST" action="https://formspree.io/f/your-id">
+        <div class="form-row">
+          <label for="player-name">Fulde navn</label>
+          <input id="player-name" name="name" type="text" required />
+        </div>
+
+        <div class="form-row">
+          <label for="player-dob">Fødselsdato</label>
+          <input id="player-dob" name="birthdate" type="date" required />
+        </div>
+
+        <div class="form-row">
+          <label for="player-phone">Telefon</label>
+          <input id="player-phone" name="phone" type="tel" required />
+        </div>
+
+        <div class="form-row">
+          <label for="player-email">Email</label>
+          <input id="player-email" name="email" type="email" required />
+        </div>
+
+        <div class="form-row">
+          <label for="player-club">Nuværende klub</label>
+          <input id="player-club" name="current_club" type="text" required />
+        </div>
+
+        <div class="form-row">
+          <label for="player-lastmatch">Sidst spillede kamp (valgfri)</label>
+          <input id="player-lastmatch" name="last_match" type="text" />
+        </div>
+
+        <div class="form-row checkbox-row">
+          <input id="player-consent" name="consent" type="checkbox" required />
+          <label for="player-consent">Jeg giver samtykke til klubskifte</label>
+        </div>
+
+        <div class="form-row">
+          <button type="submit" class="btn-submit">Send tilmelding</button>
+        </div>
+      </form>
+    </div>
+  </section>
 </div>
 
 <footer>
