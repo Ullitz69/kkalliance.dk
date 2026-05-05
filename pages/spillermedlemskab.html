@@ -82,45 +82,51 @@
   </section>
   
   <section class="signup">
-    <div class="player-form" role="region" aria-labelledby="signup-title">
+    <div class="signup-card">
       <h2 id="signup-title">Klubskifte – Bliv spiller</h2>
       <p>Udfyld formularen for at skifte til klubben. Vi opretter dit spillercertifikat. Du er først spilleklar, når det er godkendt.</p>
 
-      <form action="https://formspree.io/f/mnwjwjap" method="POST"></form>
+      <form class="player-form" action="https://formspree.io/f/mnwjwjap" method="POST" novalidate>
         <input type="hidden" name="_subject" value="Ny klubskifte tilmelding">
         <input type="hidden" name="_replyto" value="">
-        <div class="form-row">
-          <label for="player-name">Fulde navn</label>
-          <input id="player-name" name="name" type="text" required />
+
+        <div class="form-group">
+          <label for="name">Fulde navn</label>
+          <input id="name" name="name" type="text" placeholder="Fx. Jens Hansen" required>
         </div>
 
-        <div class="form-row">
-          <label for="player-dob">Fødselsdato</label>
-          <input id="player-dob" name="birthdate" type="date" required />
+        <div class="form-group">
+          <label for="birthdate">Fødselsdato</label>
+          <input id="birthdate" name="birthdate" type="date" required>
         </div>
 
-        <div class="form-row">
-          <label for="player-phone">Telefon</label>
-          <input id="player-phone" name="phone" type="tel" required />
+        <div class="form-group">
+          <label for="phone">Telefon</label>
+          <input id="phone" name="phone" type="tel" placeholder="+45 12 34 56 78" required>
         </div>
 
-        <div class="form-row">
-          <label for="player-email">Email</label>
-          <input id="player-email" name="email" type="email" required />
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="navn@eksempel.dk" required>
         </div>
 
-        <div class="form-row">
-          <label for="player-club">Nuværende klub</label>
-          <input id="player-club" name="current_club" type="text" required />
+        <div class="form-group">
+          <label for="current_club">Nuværende klub</label>
+          <input id="current_club" name="current_club" type="text" placeholder="Navn på klub">
         </div>
 
-        <div class="form-row checkbox-row">
-          <input id="player-consent" name="consent" type="checkbox" required />
-          <label for="player-consent">Jeg giver samtykke til klubskifte</label>
+        <div class="form-group">
+          <label for="last_match">Sidste kamp (dato)</label>
+          <input id="last_match" name="last_match" type="date">
         </div>
 
-        <div class="form-row">
-          <button type="submit" class="btn-submit">Send tilmelding</button>
+        <div class="form-group consent-group">
+          <input id="consent" name="consent" type="checkbox">
+          <label for="consent">Jeg giver samtykke til behandling af mine oplysninger</label>
+        </div>
+
+        <div class="form-group">
+          <button type="submit">Send ansøgning</button>
         </div>
       </form>
     </div>

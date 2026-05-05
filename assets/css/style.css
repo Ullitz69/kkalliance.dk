@@ -798,6 +798,104 @@ footer a:hover {
 
 /* ========================= */
 /* INSTAGRAM (FORSIDE) */
+
+/* Enhanced signup/card styles (player transfer form) */
+.signup {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.signup-card {
+  width: 100%;
+  max-width: 600px;
+  background: #fbfbfd;
+  border: 1px solid rgba(11,61,145,0.06);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(11,61,145,0.06);
+  padding: 28px;
+  box-sizing: border-box;
+}
+
+.signup-card h2 {
+  margin: 0 0 10px 0;
+  font-size: 1.25rem;
+  color: #0B3D91;
+  font-weight: 700;
+}
+
+.player-form {
+  margin-top: 8px;
+}
+
+.form-group {
+  margin-bottom: 14px;
+}
+
+.player-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+  color: rgba(0,0,0,0.85);
+  font-weight: 600;
+}
+
+.player-form input[type="text"],
+.player-form input[type="email"],
+.player-form input[type="tel"],
+.player-form input[type="date"] {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1px solid #e6e7ea;
+  border-radius: 8px;
+  background: #fff;
+  box-sizing: border-box;
+  transition: box-shadow 0.12s ease, border-color 0.12s ease;
+}
+
+.player-form input:focus {
+  outline: none;
+  border-color: #0B3D91;
+  box-shadow: 0 0 0 6px rgba(11,61,145,0.06);
+}
+
+.consent-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.player-form input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: #0B3D91;
+}
+
+.player-form button {
+  width: 100%;
+  padding: 12px 14px;
+  background: #0B3D91;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.12s ease, transform 0.06s ease;
+}
+
+.player-form button:hover {
+  background: #092f72;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 480px) {
+  .signup-card { padding: 20px; border-radius: 10px; }
+  .player-form label { font-size: 0.92rem; }
+  .player-form button { padding: 12px; border-radius: 8px; }
+}
 /* ========================= */
 
 .instagram-section {
