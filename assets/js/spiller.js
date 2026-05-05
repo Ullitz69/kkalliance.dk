@@ -47,5 +47,5 @@ if (positionEl) {
 }
 
 if (textEl) {
-  textEl.textContent = profileTextByName[name] || "Profiltekst kommer snart. Spilleren er en vigtig del af KK-Alliancen og bidrager til holdets fællesskab på og uden for banen.";
+  textEl.textContent = profileTextByName[name] || "Profiltekst kommer snart. Spilleren er en vigtig del af De Blå FC og bidrager til holdets fællesskab på og uden for banen.";
 }

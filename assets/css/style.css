@@ -90,11 +90,9 @@ h3 {
 }
 
 .logo img {
-  height: 100px;
+  height: 60px;
   width: auto;
   display: block;
-  display: flex;
-  align-items: center;
 }
 
 /* Baggrunds billede */ 
