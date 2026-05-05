@@ -86,7 +86,9 @@
       <h2 id="signup-title">Klubskifte – Bliv spiller</h2>
       <p>Udfyld formularen for at skifte til klubben. Vi opretter dit spillercertifikat. Du er først spilleklar, når det er godkendt.</p>
 
-      <form method="POST" action="https://formspree.io/f/your-id">
+      <form method="POST" action="https://formspree.io/f/mnjwvjap">
+        <input type="hidden" name="_subject" value="Ny klubskifte tilmelding">
+        <input type="hidden" name="_replyto" value="">
         <div class="form-row">
           <label for="player-name">Fulde navn</label>
           <input id="player-name" name="name" type="text" required />
@@ -135,6 +137,17 @@
 </footer>
 
 <script src="../assets/js/script.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  var form = document.querySelector('.player-form form') || document.querySelector('.player-form');
+  if (!form) return;
+  form.addEventListener('submit', function(){
+    var email = form.querySelector('input[name="email"]');
+    var reply = form.querySelector('input[name="_replyto"]');
+    if (reply) reply.value = email ? email.value : '';
+  });
+});
+</script>
 </body>
 </html>
 
