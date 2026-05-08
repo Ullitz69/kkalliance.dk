@@ -139,7 +139,7 @@ h3 {
   align-items: center; /* centrer tekst */
 }
 
-/* FJERN DEFAULT BUTTON STYLING */
+/* DROPDOWN BUTTON / LINK STYLING */
 .dropbtn {
   background: none;
   border: none;
@@ -147,6 +147,8 @@ h3 {
   font-weight: bold;
   cursor: pointer;
   font-size: 15px;
+  text-decoration: none;
+  display: inline-block;
 }
 
 /* LINKS */
