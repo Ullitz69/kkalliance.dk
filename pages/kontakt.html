@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Spillerprofil - De Blå FC</title>
+  <title>Kontakt - De Blå FC</title>
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
@@ -65,20 +65,32 @@
 
 <main role="main">
   <div class="container">
-    <article class="content player-profile">
-      <nav aria-label="Brødkrumme">
-        <a class="back-link" href="hold.html">&larr; Tilbage til holdet</a>
-      </nav>
-
-      <section class="player-profile-card">
-        <header class="player-profile-meta">
-          <span id="profile-number" class="profile-number">#</span>
-          <span id="profile-position" class="profile-position">Spiller</span>
-        </header>
-
-        <h1 id="profile-name">Spiller</h1>
-        <p id="profile-text">Profilen opdateres automatisk, når du åbner siden fra en spiller på holdet.</p>
-      </section>
+    <article class="content">
+      <h1>Kontakt os</h1>
+      <p>Vi glæder os til at høre fra dig. Kontakt os gerne!</p>
+      
+      <div class="contact-info">
+        <p><strong>Email:</strong> <a href="mailto:deblaafc@gmail.com">deblaafc@gmail.com</a></p>
+      </div>
+      
+      <form class="contact-form" method="POST" action="#" aria-label="Kontaktformular">
+        <div class="form-group">
+          <label for="name">Navn:</label>
+          <input type="text" id="name" name="name" required aria-required="true">
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required aria-required="true">
+        </div>
+        
+        <div class="form-group">
+          <label for="message">Besked:</label>
+          <textarea id="message" name="message" rows="6" required aria-required="true"></textarea>
+        </div>
+        
+        <button type="submit" class="btn-submit">Send</button>
+      </form>
     </article>
   </div>
 </main>
@@ -87,7 +99,5 @@
   <p>&copy; 2026 De Blå FC. Alle rettigheder forbeholdt.</p>
 </footer>
 
-<script src="../assets/js/script.js"></script>
-<script src="../assets/js/spiller.js"></script>
 </body>
 </html>
