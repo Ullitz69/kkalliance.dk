@@ -961,7 +961,10 @@ footer a:hover {
 }
 
 .back-link:hover {
-  text-decoration: 900px) {
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
   .content .container {
     display: block;
   }
@@ -969,7 +972,10 @@ footer a:hover {
   .instagram-section {
     margin-top: 30px;
     grid-column: auto;
-    grid-row: auto
+    grid-row: auto;
+  }
+}
+
 @media (max-width: 768px) {
   .membership-options {
     grid-template-columns: 1fr;
@@ -977,7 +983,201 @@ footer a:hover {
 }
 
 /* ========================= */
-/* SPILLERPROFIL */
+/* KONTAKTSIDEN */
+/* ========================= */
+
+.contact-page {
+  background: #f5f7fa;
+  min-height: calc(100vh - 160px);
+}
+
+.contact-hero {
+  background: linear-gradient(135deg, #0B3D91 0%, #082b66 100%);
+  color: white;
+  padding: 70px 0 60px;
+}
+
+.contact-hero .eyebrow {
+  display: inline-block;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-size: 13px;
+  opacity: 0.85;
+  margin-bottom: 12px;
+}
+
+.contact-hero h1 {
+  font-size: clamp(36px, 5vw, 58px);
+  line-height: 1.05;
+  margin: 0 0 18px;
+}
+
+.contact-hero p {
+  max-width: 680px;
+  font-size: 18px;
+  line-height: 1.7;
+  margin: 0;
+  opacity: 0.92;
+}
+
+.contact-section {
+  padding: 60px 0;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 32px;
+  align-items: start;
+}
+
+.contact-card,
+.contact-info-card {
+  background: white;
+  border: 1px solid #d9e2f0;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(11, 61, 145, 0.08);
+  padding: 32px;
+}
+
+.contact-card h2,
+.contact-info-card h2 {
+  color: #0B3D91;
+  margin: 0 0 10px;
+  font-size: 28px;
+}
+
+.contact-card > p {
+  margin: 0 0 26px;
+  color: #25324a;
+  line-height: 1.6;
+}
+
+.contact-form {
+  display: grid;
+  gap: 18px;
+}
+
+.contact-form .form-group {
+  display: grid;
+  gap: 8px;
+}
+
+.contact-form .form-group label {
+  font-weight: 700;
+  color: #0b1a33;
+}
+
+.contact-form .form-group input,
+.contact-form .form-group textarea {
+  width: 100%;
+  border: 1px solid #cfd8e6;
+  border-radius: 10px;
+  padding: 13px 14px;
+  font: inherit;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.contact-form .form-group textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.contact-form .form-group input:focus,
+.contact-form .form-group textarea:focus {
+  outline: none;
+  border-color: #0B3D91;
+  box-shadow: 0 0 0 4px rgba(11, 61, 145, 0.12);
+}
+
+.primary-btn {
+  border: none;
+  background: #0B3D91;
+  color: white;
+  font-weight: 800;
+  padding: 14px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  width: fit-content;
+  transition: background 0.2s ease;
+}
+
+.primary-btn:hover {
+  background: #082f72;
+}
+
+.contact-info-card {
+  position: sticky;
+  top: 110px;
+}
+
+.contact-info-item {
+  border-top: 1px solid #e4eaf3;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.contact-info-item:first-child {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.contact-info-item h3 {
+  font-size: 16px;
+  margin: 0 0 8px;
+  color: #0B3D91;
+}
+
+.contact-info-item p,
+.contact-info-item a {
+  margin: 0 0 6px;
+  color: #0b1a33;
+  line-height: 1.6;
+}
+
+.contact-info-item a {
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.contact-info-item a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-info-card {
+    position: static;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-hero {
+    padding: 46px 0 42px;
+  }
+
+  .contact-section {
+    padding: 36px 0;
+  }
+
+  .contact-card,
+  .contact-info-card {
+    padding: 22px;
+    border-radius: 12px;
+  }
+
+  .primary-btn {
+    width: 100%;
+  }
+}
+
 /* ========================= */
 
 .player-profile {

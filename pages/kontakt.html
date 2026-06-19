@@ -83,36 +83,64 @@
   </div>
 </header>
 
-<main role="main">
-  <div class="container">
-    <article class="content">
-      <h1>Kontakt os</h1>
-      <p>Vi glæder os til at høre fra dig. Kontakt os gerne!</p>
-      
-      <div class="contact-info">
-        <p><strong>Email:</strong> <a href="mailto:deblaafc@gmail.com">deblaafc@gmail.com</a></p>
+<main class="contact-page" role="main">
+  <section class="contact-hero">
+    <div class="container">
+      <span class="eyebrow">Kontakt</span>
+      <h1>Kontakt De Blå FC</h1>
+      <p>Har du spørgsmål om medlemskab, træning, kampe eller sponsorater? Send os en besked, så vender vi tilbage hurtigst muligt.</p>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <div class="container contact-grid">
+
+      <div class="contact-card">
+        <h2>Send os en besked</h2>
+        <p>Udfyld formularen, så kontakter vi dig.</p>
+
+        <form class="contact-form" method="POST" action="#" aria-label="Kontaktformular">
+          <div class="form-group">
+            <label for="name">Navn</label>
+            <input id="name" name="name" type="text" placeholder="Dit navn" required aria-required="true">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="din@email.dk" required aria-required="true">
+          </div>
+
+          <div class="form-group">
+            <label for="message">Besked</label>
+            <textarea id="message" name="message" rows="6" placeholder="Skriv din besked her..." required aria-required="true"></textarea>
+          </div>
+
+          <button type="submit" class="primary-btn">Send besked</button>
+        </form>
       </div>
-      
-      <form class="contact-form" method="POST" action="#" aria-label="Kontaktformular">
-        <div class="form-group">
-          <label for="name">Navn:</label>
-          <input type="text" id="name" name="name" required aria-required="true">
+
+      <aside class="contact-info-card">
+        <h2>Kontaktinformation</h2>
+
+        <div class="contact-info-item">
+          <h3>Email</h3>
+          <a href="mailto:deblaafc@gmail.com">deblaafc@gmail.com</a>
         </div>
-        
-        <div class="form-group">
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required aria-required="true">
+
+        <div class="contact-info-item">
+          <h3>Træning</h3>
+          <p>Torsdag kl. 18:30–20:00</p>
+          <p>Bispebjerg Stadion, bane 1</p>
         </div>
-        
-        <div class="form-group">
-          <label for="message">Besked:</label>
-          <textarea id="message" name="message" rows="6" required aria-required="true"></textarea>
+
+        <div class="contact-info-item">
+          <h3>Sociale medier</h3>
+          <a href="https://www.instagram.com/valbysblaadrenge/" target="_blank" rel="noopener noreferrer">Instagram</a>
         </div>
-        
-        <button type="submit" class="btn-submit">Send</button>
-      </form>
-    </article>
-  </div>
+      </aside>
+
+    </div>
+  </section>
 </main>
 
 <footer class="footer" role="contentinfo">
