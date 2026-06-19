@@ -617,17 +617,22 @@ footer a:hover {
   box-sizing: border-box;
 }
 
+.content .container {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 40px;
+  align-items: start;
+}
+
 /* cards fylder hele bredden */
 .card {
-  width: 10%;
-  box-sizing: border-box;
-
-  background-color: #0B3D91;
-  color: white;
-
-  padding: 20px;
+  background: #f5f7fa;
+  border-left: 4px solid #0B3D91;
+  border-radius: 6px;
+  padding: 20px 24px;
   margin-bottom: 20px;
-  border-radius: 10px;
+  transition: box-shadow 0.2s ease;
+  box-sizing: border-box;
 }
 
 
@@ -870,7 +875,10 @@ footer a:hover {
 /* ========================= */
 
 .instagram-section {
-  margin-top: 30px;
+  margin-top: 0;
+  width: 100%;
+  grid-column: 2;
+  grid-row: 1 / -1;
 }
 
 .instagram-section h2 {
@@ -953,9 +961,15 @@ footer a:hover {
 }
 
 .back-link:hover {
-  text-decoration: underline;
-}
+  text-decoration: 900px) {
+  .content .container {
+    display: block;
+  }
 
+  .instagram-section {
+    margin-top: 30px;
+    grid-column: auto;
+    grid-row: auto
 @media (max-width: 768px) {
   .membership-options {
     grid-template-columns: 1fr;
