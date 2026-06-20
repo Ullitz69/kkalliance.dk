@@ -1302,3 +1302,249 @@ footer a:hover {
   margin: 0;
   line-height: 1.7;
 }
+
+/* ========================= */
+/* HALL OF FAME - FLIP CARDS */
+/* ========================= */
+
+.hall-section {
+  padding: 60px 0;
+  background: #ffffff;
+}
+
+.hall-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.hall-header .eyebrow {
+  display: inline-block;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #0B3D91;
+  margin-bottom: 14px;
+  opacity: 0.8;
+}
+
+.hall-header h1 {
+  font-size: clamp(32px, 5vw, 48px);
+  margin: 0 0 16px;
+  color: #0B3D91;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.hall-header p {
+  font-size: 18px;
+  color: rgba(11, 61, 145, 0.7);
+  margin: 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.hall-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.hall-card {
+  perspective: 1000px;
+  height: 400px;
+  cursor: pointer;
+}
+
+.hall-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transform-style: preserve-3d;
+}
+
+.hall-card:hover .hall-card-inner,
+.hall-card:focus-within .hall-card-inner {
+  transform: rotateY(180deg);
+}
+
+.hall-card-front,
+.hall-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(11, 61, 145, 0.12);
+}
+
+.hall-card-front {
+  background: #ffffff;
+  border: 2px solid #e8eff8;
+  color: #0B3D91;
+}
+
+.hall-card-back {
+  background: linear-gradient(135deg, #0B3D91 0%, #082f72 100%);
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.hall-card-front .card-content,
+.hall-card-back .card-content {
+  padding: 40px;
+  text-align: center;
+  width: 100%;
+}
+
+.hall-card-front h2 {
+  font-size: 28px;
+  font-weight: 800;
+  margin: 0 0 12px;
+  line-height: 1.2;
+}
+
+.hall-card-back h3 {
+  font-size: 22px;
+  font-weight: 800;
+  margin: 0 0 20px;
+  color: white;
+}
+
+.hall-role {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 8px;
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.hall-hint {
+  font-size: 12px;
+  margin: 16px 0 0;
+  opacity: 0.6;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.achievement-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.achievement-list li {
+  padding: 12px 0;
+  padding-left: 24px;
+  position: relative;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.achievement-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  font-weight: 800;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.achievement-list li:last-child {
+  padding-bottom: 0;
+}
+
+/* Responsive: Tablet */
+@media (max-width: 1024px) {
+  .hall-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+
+  .hall-card {
+    height: 360px;
+  }
+
+  .hall-card-front h2 {
+    font-size: 24px;
+  }
+
+  .hall-card-back h3 {
+    font-size: 20px;
+  }
+
+  .achievement-list {
+    font-size: 14px;
+  }
+}
+
+/* Responsive: Mobile */
+@media (max-width: 640px) {
+  .hall-section {
+    padding: 40px 0;
+  }
+
+  .hall-header h1 {
+    font-size: clamp(24px, 5vw, 32px);
+  }
+
+  .hall-header p {
+    font-size: 16px;
+  }
+
+  .hall-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .hall-card {
+    height: 340px;
+  }
+
+  .hall-card-front .card-content,
+  .hall-card-back .card-content {
+    padding: 32px 24px;
+  }
+
+  .hall-card-front h2 {
+    font-size: 22px;
+  }
+
+  .hall-card-back h3 {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+
+  .hall-role {
+    font-size: 14px;
+  }
+
+  .hall-hint {
+    font-size: 11px;
+  }
+
+  .achievement-list {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .achievement-list li {
+    padding: 10px 0;
+    padding-left: 22px;
+  }
+
+  /* Mobile touch: Make focus state visible */
+  .hall-card:focus-within .hall-card-inner {
+    transform: rotateY(180deg);
+  }
+}
