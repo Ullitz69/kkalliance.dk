@@ -1003,6 +1003,14 @@ footer a:hover {
   text-align: left;
 }
 
+.contact-hero-small {
+  padding: 40px 0 35px !important;
+}
+
+.contact-hero-small p {
+  font-size: 16px !important;
+}
+
 .contact-hero .container {
   max-width: 1200px;
   margin: 0 auto;
