@@ -13,7 +13,7 @@
   <div class="topbar">
 
     <!-- VENSTRE MENU -->
-    <nav class="nav-left">
+    <nav class="nav-left" aria-label="Primær navigation">
       <ul class="nav-links">
 
         <li class="dropdown">
@@ -47,13 +47,8 @@
       </ul>
     </nav>
 
-    <!-- LOGO (CENTER) -->
-    <a href="index.html" class="logo">
-    <img src="assets/images/logo/logo.png" alt="De Blå FC logo">
-    </a>
-
     <!-- HØJRE MENU -->
-    <nav class="nav-right">
+    <nav class="nav-right" aria-label="Sekundær navigation">
       <ul class="nav-links">
 
         <li class="dropdown">
@@ -88,8 +83,13 @@
       </ul>
     </nav>
 
+    <!-- LOGO (HØJRE) -->
+    <a href="index.html" class="logo" aria-label="De Blå FC hjem">
+      <img src="assets/images/logo/logo.png" alt="De Blå FC logo">
+    </a>
+
     <!--BURGER -->
-    <button class="burger">☰</button>
+    <button class="burger" aria-label="Åbn menu" aria-expanded="false">☰</button>
   </div>
 </header>
 
@@ -113,16 +113,29 @@
   </div>
 
   <div class="instagram-section">
-    <h2>Følg Os På Instagram</h2>
-    <p>Se highlights, kampdage og stemningen omkring holdet.</p>
-
-    <div class="instagram-card">
-      <h3>@valbysblaadrenge</h3>
-      <p>Vi linker direkte til profilen, hvor nyeste opslag altid ligger øverst.</p>
-      <div class="instagram-actions">
-        <a class="instagram-btn" href="https://www.instagram.com/valbysblaadrenge/" target="_blank" rel="noopener noreferrer">Åbn Instagram</a>
-        <a class="instagram-link" href="https://www.instagram.com/valbysblaadrenge/" target="_blank" rel="noopener noreferrer">Se nyeste opslag</a>
+    <div class="instagram-header">
+      <div>
+        <h2>Følg Os På Instagram</h2>
+        <p>Se highlights, kampdage og stemningen omkring holdet.</p>
       </div>
+      <a class="instagram-profile-btn" href="https://www.instagram.com/videblaa/" target="_blank" rel="noopener noreferrer">@videblaa</a>
+    </div>
+
+    <div id="instagramFeed" class="instagram-feed" aria-live="polite"></div>
+
+    <div id="instagramFallback" class="instagram-fallback" hidden>
+      <div class="instagram-fallback-card">
+        <h3>@videblaa</h3>
+        <p id="instagramFallbackMessage">Instagram-feedet opdateres automatisk, når Meta-tokenet er konfigureret på serveren. Følg os direkte for at se nyeste opslag.</p>
+        <div class="instagram-actions">
+          <a class="instagram-btn" href="https://www.instagram.com/videblaa/" target="_blank" rel="noopener noreferrer">Åbn Instagram</a>
+          <a class="instagram-link" href="https://www.instagram.com/videblaa/" target="_blank" rel="noopener noreferrer">Se nyeste opslag</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="instagram-follow">
+      <a class="instagram-follow-btn" href="https://www.instagram.com/videblaa/" target="_blank" rel="noopener noreferrer">Følg @videblaa på Instagram</a>
     </div>
   </div>
 

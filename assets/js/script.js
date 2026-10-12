@@ -3,27 +3,33 @@ document.querySelectorAll(".dropbtn").forEach(button => {
     e.stopPropagation();
 
     const menu = this.nextElementSibling;
+    const isOpen = menu.classList.contains("show");
 
     document.querySelectorAll(".dropdown-menu").forEach(m => {
-      if (m !== menu) m.classList.remove("show");
+      if (m !== menu) {
+        m.classList.remove("show");
+        m.previousElementSibling?.setAttribute("aria-expanded", "false");
+      }
     });
 
-    menu.classList.toggle("show");
+    menu.classList.toggle("show", !isOpen);
+    this.setAttribute("aria-expanded", String(!isOpen));
   });
 });
 
 document.addEventListener("click", function () {
   document.querySelectorAll(".dropdown-menu").forEach(menu => {
     menu.classList.remove("show");
+    menu.previousElementSibling?.setAttribute("aria-expanded", "false");
   });
 });
 
 window.addEventListener("scroll", function () {
   const header = document.querySelector(".header");
 
-  if (window.scrollY > 10) {
+  if (header && window.scrollY > 10) {
     header.classList.add("scrolled");
-  } else {
+  } else if (header) {
     header.classList.remove("scrolled");
   }
 });
@@ -32,10 +38,14 @@ const burger = document.querySelector(".burger");
 const navLeft = document.querySelector(".nav-left");
 const navRight = document.querySelector(".nav-right");
 
-burger.addEventListener("click", () => {
-  navLeft.classList.toggle("active");
-  navRight.classList.toggle("active");
-});
+if (burger && navLeft && navRight) {
+  burger.addEventListener("click", () => {
+    const isOpen = !navLeft.classList.contains("active");
+    navLeft.classList.toggle("active", isOpen);
+    navRight.classList.toggle("active", isOpen);
+    burger.setAttribute("aria-expanded", String(isOpen));
+  });
+}
 
 // Player cards on hold page: click or Enter opens player profile page.
 const playerCards = document.querySelectorAll(".player-grid .player-card");
@@ -66,4 +76,126 @@ if (playerCards.length > 0) {
       }
     });
   });
+}
+
+const instagramConfig = {
+  endpoints: [
+    "./data/instagram.json",
+    "/data/instagram.json",
+    "/api/instagram",
+    "./api/instagram"
+  ],
+  profileUrl: "https://www.instagram.com/videblaa/",
+  maxPosts: 6
+};
+
+function getInstagramTypeLabel(type) {
+  const normalized = String(type || "IMAGE").toUpperCase();
+
+  if (normalized === "VIDEO") return "Video";
+  if (normalized === "CAROUSEL_ALBUM") return "Carousel";
+  if (normalized === "REEL") return "Reel";
+
+  return "Post";
+}
+
+function sanitizeInstagramCaption(caption) {
+  return (caption || "")
+    .replace(/<[^>]*>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function renderInstagramFallback(message) {
+  const feed = document.getElementById("instagramFeed");
+  const fallback = document.getElementById("instagramFallback");
+  const fallbackMessage = document.getElementById("instagramFallbackMessage");
+
+  if (!feed || !fallback || !fallbackMessage) return;
+
+  feed.innerHTML = "";
+  fallbackMessage.textContent = message;
+  fallback.hidden = false;
+}
+
+function createInstagramPost(post) {
+  const link = document.createElement("a");
+  link.className = "instagram-post";
+  link.href = post.permalink || instagramConfig.profileUrl;
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+  link.setAttribute("aria-label", `Åbn Instagram-opslag fra ${post.caption ? sanitizeInstagramCaption(post.caption) : "@videblaa"}`);
+
+  const image = document.createElement("img");
+  image.src = post.thumbnail_url || post.media_url || "";
+  image.alt = sanitizeInstagramCaption(post.caption) || "Instagram-opslag fra @videblaa";
+  image.loading = "lazy";
+  image.decoding = "async";
+  image.setAttribute("referrerpolicy", "no-referrer");
+
+  const badge = document.createElement("span");
+  badge.className = "instagram-post-badge";
+  badge.textContent = getInstagramTypeLabel(post.media_type);
+
+  link.appendChild(image);
+  link.appendChild(badge);
+
+  return link;
+}
+
+async function loadInstagramFeed() {
+  const feed = document.getElementById("instagramFeed");
+  const fallback = document.getElementById("instagramFallback");
+
+  if (!feed || !fallback) return;
+
+  let response;
+  let lastErrorText = "Instagram-feedet er ikke tilgængeligt lige nu.";
+
+  try {
+    for (const endpoint of instagramConfig.endpoints) {
+      try {
+        response = await fetch(endpoint, {
+          headers: { Accept: "application/json" },
+          cache: "no-store"
+        });
+
+        if (response.ok) {
+          break;
+        }
+
+        lastErrorText = `Instagram-feedet kunne ikke hentes (${response.status}).`;
+      } catch (fetchError) {
+        lastErrorText = fetchError instanceof Error ? fetchError.message : lastErrorText;
+      }
+    }
+
+    if (!response || !response.ok) {
+      throw new Error(lastErrorText);
+    }
+
+    const data = await response.json();
+    const posts = Array.isArray(data.posts) ? data.posts.slice(0, instagramConfig.maxPosts) : [];
+
+    if (!posts.length) {
+      throw new Error("Der blev ikke fundet nye Instagram-opslag.");
+    }
+
+    feed.innerHTML = "";
+    posts.forEach(post => {
+      feed.appendChild(createInstagramPost(post));
+    });
+
+    fallback.hidden = true;
+  } catch (error) {
+    renderInstagramFallback(
+      error instanceof Error
+        ? `${error.message} Følg @videblaa direkte for at se de seneste opslag.`
+        : "Instagram-feedet er ikke tilgængeligt lige nu. Følg @videblaa direkte for at se de seneste opslag."
+    );
+  }
+}
+
+if (document.getElementById("instagramFeed")) {
+  loadInstagramFeed();
 }
