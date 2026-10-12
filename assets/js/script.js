@@ -86,7 +86,7 @@ const instagramConfig = {
     "./api/instagram"
   ],
   profileUrl: "https://www.instagram.com/videblaa/",
-  maxPosts: 6
+  maxPosts: 3
 };
 
 function getInstagramTypeLabel(type) {

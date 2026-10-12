@@ -7,7 +7,7 @@ const outputPath = path.resolve(rootDir, process.env.INSTAGRAM_OUTPUT_PATH || 'd
 const token = (process.env.INSTAGRAM_ACCESS_TOKEN || '').trim();
 const accountId = (process.env.INSTAGRAM_BUSINESS_ACCOUNT_ID || '').trim();
 const apiVersion = process.env.INSTAGRAM_API_VERSION || 'v20.0';
-const maxPosts = Number(process.env.INSTAGRAM_MAX_POSTS || 6);
+const maxPosts = Number(process.env.INSTAGRAM_MAX_POSTS || 3);
 
 function buildFallbackFeed() {
   return {

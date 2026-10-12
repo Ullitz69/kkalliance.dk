@@ -65,7 +65,7 @@ module.exports = async function handler(req, res) {
       return res.status(502).json({ posts: [], error: message });
     }
 
-    const posts = Array.isArray(payload.data) ? payload.data.slice(0, 6).map(normalizePost) : [];
+    const posts = Array.isArray(payload.data) ? payload.data.slice(0, 3).map(normalizePost) : [];
     const expiresAt = Date.now() + cacheDurationMs;
 
     globalThis.__instagramFeedCache = { expiresAt, posts };
