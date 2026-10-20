@@ -1,52 +1,78 @@
-document.querySelectorAll(".dropbtn").forEach(button => {
-  button.addEventListener("click", function (e) {
-    e.stopPropagation();
+const burger = document.querySelector(".burger");
+const siteNavigation = document.querySelector("#siteNavigation");
+const dropdownButtons = document.querySelectorAll(".site-navigation .dropbtn");
 
-    const menu = this.nextElementSibling;
-    const isOpen = menu.classList.contains("show");
+function closeDropdowns() {
+  dropdownButtons.forEach(button => {
+    button.setAttribute("aria-expanded", "false");
+    const menu = document.getElementById(button.getAttribute("aria-controls"));
+    if (menu) menu.hidden = true;
+  });
+}
 
-    document.querySelectorAll(".dropdown-menu").forEach(m => {
-      if (m !== menu) {
-        m.classList.remove("show");
-        m.previousElementSibling?.setAttribute("aria-expanded", "false");
+function closeNavigation(returnFocus = false) {
+  if (!burger || !siteNavigation) return;
+  siteNavigation.hidden = true;
+  burger.setAttribute("aria-expanded", "false");
+  burger.setAttribute("aria-label", "\u00C5bn menu");
+  const label = burger.querySelector(".burger-label");
+  if (label) label.textContent = "Menu";
+  closeDropdowns();
+  if (returnFocus) burger.focus();
+}
+
+if (burger && siteNavigation) {
+  burger.addEventListener("click", () => {
+    const isOpen = burger.getAttribute("aria-expanded") === "true";
+    if (isOpen) {
+      closeNavigation();
+      return;
+    }
+    siteNavigation.hidden = false;
+    burger.setAttribute("aria-expanded", "true");
+    burger.setAttribute("aria-label", "Luk menu");
+    const label = burger.querySelector(".burger-label");
+    if (label) label.textContent = "Luk menu";
+  });
+
+  dropdownButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      const menu = document.getElementById(button.getAttribute("aria-controls"));
+      if (!menu) return;
+      const isOpen = button.getAttribute("aria-expanded") === "true";
+      closeDropdowns();
+      if (!isOpen) {
+        menu.hidden = false;
+        button.setAttribute("aria-expanded", "true");
       }
     });
-
-    menu.classList.toggle("show", !isOpen);
-    this.setAttribute("aria-expanded", String(!isOpen));
   });
-});
 
-document.addEventListener("click", function () {
-  document.querySelectorAll(".dropdown-menu").forEach(menu => {
-    menu.classList.remove("show");
-    menu.previousElementSibling?.setAttribute("aria-expanded", "false");
+  siteNavigation.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => closeNavigation());
   });
-});
+
+  document.addEventListener("click", event => {
+    if (!siteNavigation.contains(event.target) && !burger.contains(event.target)) {
+      closeNavigation();
+    }
+  });
+
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape" && !siteNavigation.hidden) {
+      closeNavigation(true);
+    }
+  });
+}
 
 window.addEventListener("scroll", function () {
   const header = document.querySelector(".header");
-
   if (header && window.scrollY > 10) {
     header.classList.add("scrolled");
   } else if (header) {
     header.classList.remove("scrolled");
   }
 });
-/* BURGER MENU */
-const burger = document.querySelector(".burger");
-const navLeft = document.querySelector(".nav-left");
-const navRight = document.querySelector(".nav-right");
-
-if (burger && navLeft && navRight) {
-  burger.addEventListener("click", () => {
-    const isOpen = !navLeft.classList.contains("active");
-    navLeft.classList.toggle("active", isOpen);
-    navRight.classList.toggle("active", isOpen);
-    burger.setAttribute("aria-expanded", String(isOpen));
-  });
-}
-
 // Player cards on hold page: click or Enter opens player profile page.
 const playerCards = document.querySelectorAll(".player-grid .player-card");
 

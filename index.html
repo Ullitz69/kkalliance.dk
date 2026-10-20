@@ -11,86 +11,44 @@
 
 <header class="header">
   <div class="topbar">
-
-    <!-- VENSTRE MENU -->
-    <nav class="nav-left" aria-label="Primær navigation">
-      <ul class="nav-links">
-
-        <li class="dropdown">
-          <a class="dropbtn" href="pages/hold.html">Hold</a>
-          <ul class="dropdown-menu">
-            <li><a href="pages/hold.html">1. Holdet</a></li>
-          </ul>
-        </li>
-
-        <li class="dropdown">
-          <a class="dropbtn" href="pages/kampe.html">Kampe</a>
-          <ul class="dropdown-menu">
-            <li><a href="pages/kampe.html">Resultater</a></li>
-          </ul>
-        </li>
-
-        <li class="dropdown">
-          <a class="dropbtn" href="pages/medlemskab.html">Medlemskab</a>
-          <ul class="dropdown-menu">
-            <li><a href="pages/medlemskab.html">Bliv medlem</a></li>
-          </ul>
-        </li>
-
-        <li class="dropdown">
-          <a class="dropbtn" href="pages/hall-of-fame.html">Hall of Fame</a>
-          <ul class="dropdown-menu">
-            <li><a href="pages/hall-of-fame.html">Se profiler</a></li>
-          </ul>
-        </li>
-
-      </ul>
-    </nav>
-
-    <!-- HØJRE MENU -->
-    <nav class="nav-right" aria-label="Sekundær navigation">
-      <ul class="nav-links">
-
-        <li class="dropdown">
-          <a class="dropbtn" href="pages/information.html">Hvem er vi?</a>
-          <ul class="dropdown-menu">
-            <li><a href="pages/information.html">Om os</a></li>
-          </ul>
-        </li>
-
-        <li class="dropdown">
-          <a class="dropbtn" href="pages/kontakt.html">Kontakt</a>
-          <ul class="dropdown-menu">
-            <li><a href="pages/kontakt.html">Kontakt os</a></li>
-          </ul>
-        </li>
-
-        <li class="dropdown">
-          <a class="dropbtn" href="pages/sponsorer.html">Sponsor</a>
-          <ul class="dropdown-menu">
-            <li><a href="pages/sponsorer.html">Bliv sponsor</a></li>
-            <li><a href="pages/sponsorer.html">Vores sponsorer</a></li>
-          </ul>
-        </li>
-
-        <li class="dropdown">
-          <a class="dropbtn" href="pages/shop.html">Shop</a>
-          <ul class="dropdown-menu">
-            <li><a href="pages/shop.html">Shop</a></li>
-          </ul>
-        </li>
-
-      </ul>
-    </nav>
-
-    <!-- LOGO (HØJRE) -->
-    <a href="index.html" class="logo" aria-label="De Blå FC hjem">
-      <img src="assets/images/logo/logo.png" alt="De Blå FC logo">
+    <a href="index.html" class="logo" aria-label="De Bl&#229; FC hjem">
+      <img src="assets/images/logo/logo.png" alt="De Bl&#229; FC logo">
     </a>
-
-    <!--BURGER -->
-    <button class="burger" aria-label="Åbn menu" aria-expanded="false">☰</button>
+    <button class="burger" type="button" aria-label="&#197;bn menu" aria-expanded="false" aria-controls="siteNavigation">
+      <span class="burger-icon" aria-hidden="true">&#9776;</span>
+      <span class="burger-label">Menu</span>
+    </button>
   </div>
+  <nav class="site-navigation" id="siteNavigation" aria-label="Hovedmenu" hidden>
+    <ul class="nav-links">
+      <li class="dropdown">
+        <button class="dropbtn" type="button" aria-expanded="false" aria-controls="navHold">Hold<span class="dropdown-indicator" aria-hidden="true"></span></button>
+        <ul class="dropdown-menu" id="navHold" hidden>
+          <li><a href="pages/hold.html">1. Holdet</a></li>
+          <li><a href="pages/spiller.html">Spillerprofil</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <button class="dropbtn" type="button" aria-expanded="false" aria-controls="navMedlemskab">Medlemskab<span class="dropdown-indicator" aria-hidden="true"></span></button>
+        <ul class="dropdown-menu" id="navMedlemskab" hidden>
+          <li><a href="pages/medlemskab.html">Bliv medlem</a></li>
+          <li><a href="pages/spillermedlemskab.html">Spillermedlemskab</a></li>
+          <li><a href="pages/saesonkortholder.html">S&#230;sonkortholder</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <button class="dropbtn" type="button" aria-expanded="false" aria-controls="navKlubben">Klubben<span class="dropdown-indicator" aria-hidden="true"></span></button>
+        <ul class="dropdown-menu" id="navKlubben" hidden>
+          <li><a href="pages/information.html">Hvem er vi?</a></li>
+          <li><a href="pages/hall-of-fame.html">Hall of Fame</a></li>
+          <li><a href="pages/sponsorer.html">Sponsorer</a></li>
+          <li><a href="pages/kontakt.html">Kontakt</a></li>
+          <li><a href="pages/shop.html">Shop</a></li>
+          <li><a href="pages/kampe.html">Kampe (sat p&#229; pause)</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
 </header>
 
 <section class="hero">

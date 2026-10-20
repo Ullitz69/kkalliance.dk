@@ -11,86 +11,44 @@
 
 <header class="header">
   <div class="topbar">
-
-    <!-- VENSTRE MENU -->
-    <nav class="nav-left">
-      <ul class="nav-links">
-
-        <li class="dropdown">
-          <a class="dropbtn" href="hold.html">Hold</a>
-          <ul class="dropdown-menu">
-            <li><a href="hold.html">1. Holdet</a></li>
-          </ul>
-        </li>
-
-        <li class="dropdown">
-          <a class="dropbtn" href="kampe.html">Kampe</a>
-          <ul class="dropdown-menu">
-            <li><a href="kampe.html">Resultater</a></li>
-          </ul>
-        </li>
-
-        <li class="dropdown">
-          <a class="dropbtn" href="medlemskab.html">Medlemskab</a>
-          <ul class="dropdown-menu">
-            <li><a href="medlemskab.html">Bliv medlem</a></li>
-          </ul>
-        </li>
-
-        <li class="dropdown">
-          <a class="dropbtn" href="hall-of-fame.html">Hall of Fame</a>
-          <ul class="dropdown-menu">
-            <li><a href="hall-of-fame.html">Se profiler</a></li>
-          </ul>
-        </li>
-
-      </ul>
-    </nav>
-
-    <!-- LOGO (CENTER) -->
-    <a href="../index.html" class="logo">
-    <img src="../assets/images/logo/logo.png" alt="De Blå FC logo">
+    <a href="../index.html" class="logo" aria-label="De Bl&#229; FC hjem">
+      <img src="../assets/images/logo/logo.png" alt="De Bl&#229; FC logo">
     </a>
-
-    <!-- HØJRE MENU -->
-    <nav class="nav-right">
-      <ul class="nav-links">
-
-        <li class="dropdown">
-          <a class="dropbtn" href="information.html">Hvem er vi?</a>
-          <ul class="dropdown-menu">
-            <li><a href="information.html">Om os</a></li>
-          </ul>
-        </li>
-
-        <li class="dropdown">
-          <a class="dropbtn" href="kontakt.html">Kontakt</a>
-          <ul class="dropdown-menu">
-            <li><a href="kontakt.html">Kontakt os</a></li>
-          </ul>
-        </li>
-
-        <li class="dropdown">
-          <a class="dropbtn" href="sponsorer.html">Sponsor</a>
-          <ul class="dropdown-menu">
-            <li><a href="sponsorer.html">Bliv sponsor</a></li>
-            <li><a href="sponsorer.html">Vores sponsorer</a></li>
-          </ul>
-        </li>
-
-        <li class="dropdown">
-          <a class="dropbtn" href="shop.html">Shop</a>
-          <ul class="dropdown-menu">
-            <li><a href="shop.html">Shop</a></li>
-          </ul>
-        </li>
-
-      </ul>
-    </nav>
-
-    <!--BURGER -->
-    <button class="burger">☰</button>
+    <button class="burger" type="button" aria-label="&#197;bn menu" aria-expanded="false" aria-controls="siteNavigation">
+      <span class="burger-icon" aria-hidden="true">&#9776;</span>
+      <span class="burger-label">Menu</span>
+    </button>
   </div>
+  <nav class="site-navigation" id="siteNavigation" aria-label="Hovedmenu" hidden>
+    <ul class="nav-links">
+      <li class="dropdown">
+        <button class="dropbtn" type="button" aria-expanded="false" aria-controls="navHold">Hold<span class="dropdown-indicator" aria-hidden="true"></span></button>
+        <ul class="dropdown-menu" id="navHold" hidden>
+          <li><a href="hold.html">1. Holdet</a></li>
+          <li><a href="spiller.html">Spillerprofil</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <button class="dropbtn" type="button" aria-expanded="false" aria-controls="navMedlemskab">Medlemskab<span class="dropdown-indicator" aria-hidden="true"></span></button>
+        <ul class="dropdown-menu" id="navMedlemskab" hidden>
+          <li><a href="medlemskab.html">Bliv medlem</a></li>
+          <li><a href="spillermedlemskab.html">Spillermedlemskab</a></li>
+          <li><a href="saesonkortholder.html">S&#230;sonkortholder</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <button class="dropbtn" type="button" aria-expanded="false" aria-controls="navKlubben">Klubben<span class="dropdown-indicator" aria-hidden="true"></span></button>
+        <ul class="dropdown-menu" id="navKlubben" hidden>
+          <li><a href="information.html">Hvem er vi?</a></li>
+          <li><a href="hall-of-fame.html">Hall of Fame</a></li>
+          <li><a href="sponsorer.html">Sponsorer</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="kampe.html">Kampe (sat p&#229; pause)</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
 </header>
 
 <div class="container">
