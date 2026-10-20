@@ -113,6 +113,19 @@ p { margin-top: 0; }
 .player-info .number { display: block; margin-bottom: 4px; color: var(--accent); font-weight: 700; }
 .player-info h4 { margin: 0; font-size: 1.1rem; }
 
+.sponsor-intro { max-width: 680px; margin-bottom: 32px; color: var(--muted); font-size: 1.08rem; }
+.sponsor-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+.sponsor-card { display: flex; min-height: 290px; flex-direction: column; align-items: flex-start; padding: clamp(24px, 4vw, 38px); background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 8px 24px rgba(16,43,82,.06); }
+.sponsor-card-main { color: white; background: linear-gradient(135deg, var(--navy), var(--blue)); border: 0; box-shadow: 0 16px 34px rgba(11,47,110,.2); }
+.sponsor-label { display: inline-flex; align-items: center; min-height: 30px; margin-bottom: 20px; padding: 5px 11px; color: var(--navy); background: var(--accent); border-radius: 999px; font-size: .78rem; font-weight: 800; letter-spacing: .03em; }
+.sponsor-card h2 { margin: 0 0 14px; color: var(--navy); font-size: clamp(1.6rem, 3vw, 2.15rem); }
+.sponsor-card-main h2 { color: white; }
+.sponsor-card p { max-width: 460px; margin-bottom: 26px; color: var(--muted); }
+.sponsor-card-main p { color: rgba(255,255,255,.84); }
+.sponsor-link { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; margin-top: auto; padding: 10px 15px; color: white; background: var(--blue); border-radius: 8px; font-weight: 700; text-decoration: none; transition: background .2s ease, transform .2s ease; }
+.sponsor-link:hover { background: #174da8; transform: translateY(-2px); }
+.sponsor-card-main .sponsor-link { color: var(--navy); background: white; }
+.sponsor-card-main .sponsor-link:hover { background: #edf5ff; }
 .membership-options { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 22px; margin-top: 32px; }
 .membership-card { display: block; padding: 30px; color: var(--ink); text-decoration: none; transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
 .membership-card:hover { border-color: var(--blue); box-shadow: var(--shadow); transform: translateY(-4px); }
@@ -246,6 +259,7 @@ footer p { margin: 0; }
   .primary-nav .nav-links a { display: flex; width: 100%; min-height: 40px; justify-content: center; padding: 6px 4px; font-size: .8rem; white-space: nowrap; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14); border-radius: 8px; }
   .primary-nav .nav-links a:hover, .primary-nav .nav-links a:focus-visible { background: rgba(255,255,255,.17); border-bottom-color: transparent; }
   .hub-links { grid-template-columns: 1fr; }
+  .sponsor-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 360px) {
   .header > .topbar { padding-right: 8px; padding-left: 8px; gap: 5px; }
