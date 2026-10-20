@@ -235,10 +235,16 @@ footer p { margin: 0; }
 .hub-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
 .hub-links .membership-card { min-height: 132px; }
 @media (max-width: 700px) {
-  .header > .topbar { min-height: 72px; padding-right: 12px; padding-left: 12px; gap: 10px; }
-  .header .logo img { height: 50px; }
-  .primary-nav .nav-links { gap: clamp(4px, 2vw, 12px); }
-  .primary-nav .nav-links a { min-height: 42px; padding: 8px 5px; font-size: .84rem; white-space: nowrap; }
+  .header > .topbar { min-height: 0; padding: 8px 12px 10px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .header .logo { order: 1; margin-left: auto; }
+  .header .logo img { height: 42px; }
+  .primary-nav { order: 2; width: 100%; }
+  .primary-nav .nav-links { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); align-items: stretch; gap: 6px; }
+  .primary-nav .nav-links li:nth-child(-n+3) { grid-column: span 2; }
+  .primary-nav .nav-links li:nth-child(4) { grid-column: 2 / 4; }
+  .primary-nav .nav-links li:nth-child(5) { grid-column: 4 / 6; }
+  .primary-nav .nav-links a { display: flex; width: 100%; min-height: 40px; justify-content: center; padding: 6px 4px; font-size: .8rem; white-space: nowrap; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14); border-radius: 8px; }
+  .primary-nav .nav-links a:hover, .primary-nav .nav-links a:focus-visible { background: rgba(255,255,255,.17); border-bottom-color: transparent; }
   .hub-links { grid-template-columns: 1fr; }
 }
 @media (max-width: 360px) {
