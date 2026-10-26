@@ -6,16 +6,8 @@ const rootDir = process.cwd();
 const outputPath = path.resolve(rootDir, process.env.INSTAGRAM_OUTPUT_PATH || 'data/instagram.json');
 const token = (process.env.INSTAGRAM_ACCESS_TOKEN || '').trim();
 const accountId = (process.env.INSTAGRAM_BUSINESS_ACCOUNT_ID || '').trim();
-const apiVersion = process.env.INSTAGRAM_API_VERSION || 'v20.0';
+const apiVersion = process.env.INSTAGRAM_API_VERSION || 'v25.0';
 const maxPosts = Number(process.env.INSTAGRAM_MAX_POSTS || 3);
-
-function buildFallbackFeed() {
-  return {
-    generatedAt: new Date().toISOString(),
-    source: 'instagram',
-    posts: []
-  };
-}
 
 function sanitizeCaption(value) {
   return String(value || '')
@@ -55,9 +47,7 @@ function writeFeed(feed) {
 
 async function fetchPosts() {
   if (!token || !accountId) {
-    console.warn('Missing INSTAGRAM_ACCESS_TOKEN or INSTAGRAM_BUSINESS_ACCOUNT_ID. Writing empty feed for graceful fallback.');
-    writeFeed(buildFallbackFeed());
-    return;
+    throw new Error('Missing INSTAGRAM_ACCESS_TOKEN or INSTAGRAM_BUSINESS_ACCOUNT_ID. Add both as GitHub Actions secrets for the github-pages environment.');
   }
 
   const fields = ['id', 'caption', 'media_type', 'media_url', 'thumbnail_url', 'permalink', 'timestamp', 'children{media_type,media_url,thumbnail_url,permalink}'].join(',');
@@ -90,8 +80,16 @@ async function fetchPosts() {
   }
 
   const posts = Array.isArray(payload.data)
-    ? payload.data.map(normalizePost).filter(Boolean).slice(0, maxPosts)
+    ? payload.data
+        .map(normalizePost)
+        .filter(post => post && (post.thumbnail_url || post.media_url))
+        .sort((a, b) => Date.parse(b.timestamp || '') - Date.parse(a.timestamp || ''))
+        .slice(0, maxPosts)
     : [];
+
+  if (!posts.length) {
+    throw new Error('Instagram API returned no posts. Check the account ID and confirm the account has published media.');
+  }
 
   writeFeed({
     generatedAt: new Date().toISOString(),
@@ -104,6 +102,5 @@ try {
   await fetchPosts();
 } catch (error) {
   console.error(error instanceof Error ? error.message : String(error));
-  writeFeed(buildFallbackFeed());
   process.exitCode = 1;
 }

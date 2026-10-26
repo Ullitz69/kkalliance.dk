@@ -77,51 +77,48 @@ async function loadInstagramFeed() {
 
   if (!feed || !fallback) return;
 
-  let response;
   let lastErrorText = "Instagram-feedet er ikke tilgængeligt lige nu.";
+  let emptyFeedFound = false;
 
-  try {
-    for (const endpoint of instagramConfig.endpoints) {
-      try {
-        response = await fetch(endpoint, {
-          headers: { Accept: "application/json" },
-          cache: "no-store"
-        });
+  for (const endpoint of instagramConfig.endpoints) {
+    try {
+      const response = await fetch(endpoint, {
+        headers: { Accept: "application/json" },
+        cache: "no-store"
+      });
 
-        if (response.ok) {
-          break;
-        }
-
+      if (!response.ok) {
         lastErrorText = `Instagram-feedet kunne ikke hentes (${response.status}).`;
-      } catch (fetchError) {
-        lastErrorText = fetchError instanceof Error ? fetchError.message : lastErrorText;
+        continue;
       }
+
+      const data = await response.json();
+      const posts = Array.isArray(data.posts)
+        ? data.posts
+            .filter(post => post && (post.thumbnail_url || post.media_url))
+            .sort((a, b) => Date.parse(b.timestamp || "") - Date.parse(a.timestamp || ""))
+            .slice(0, instagramConfig.maxPosts)
+        : [];
+
+      if (!posts.length) {
+        emptyFeedFound = true;
+        continue;
+      }
+
+      feed.innerHTML = "";
+      posts.forEach(post => feed.appendChild(createInstagramPost(post)));
+      fallback.hidden = true;
+      return;
+    } catch (fetchError) {
+      lastErrorText = fetchError instanceof Error ? fetchError.message : lastErrorText;
     }
-
-    if (!response || !response.ok) {
-      throw new Error(lastErrorText);
-    }
-
-    const data = await response.json();
-    const posts = Array.isArray(data.posts) ? data.posts.slice(0, instagramConfig.maxPosts) : [];
-
-    if (!posts.length) {
-      throw new Error("Der blev ikke fundet nye Instagram-opslag.");
-    }
-
-    feed.innerHTML = "";
-    posts.forEach(post => {
-      feed.appendChild(createInstagramPost(post));
-    });
-
-    fallback.hidden = true;
-  } catch (error) {
-    renderInstagramFallback(
-      error instanceof Error
-        ? `${error.message} Følg @videblaa direkte for at se de seneste opslag.`
-        : "Instagram-feedet er ikke tilgængeligt lige nu. Følg @videblaa direkte for at se de seneste opslag."
-    );
   }
+
+  renderInstagramFallback(
+    emptyFeedFound
+      ? "Instagram-feedet indeholder ingen opslag lige nu. Følg @videblaa direkte for at se de seneste opslag."
+      : `${lastErrorText} Følg @videblaa direkte for at se de seneste opslag.`
+  );
 }
 
 if (document.getElementById("instagramFeed")) {
