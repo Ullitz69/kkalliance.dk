@@ -33,6 +33,8 @@ jobs:
           node-version: '20'
 
       - name: Fetch latest Instagram posts
+        id: fetch-instagram
+        continue-on-error: true
         env:
           INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
           INSTAGRAM_BUSINESS_ACCOUNT_ID: ${{ secrets.INSTAGRAM_BUSINESS_ACCOUNT_ID }}
@@ -53,3 +55,9 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Report Instagram sync failure
+        if: ${{ success() && steps.fetch-instagram.outcome == 'failure' }}
+        run: |
+          echo "::error::Instagram sync failed after the Pages deployment. The site is live with the existing feed data."
+          exit 1
