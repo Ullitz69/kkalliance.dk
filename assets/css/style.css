@@ -267,3 +267,14 @@ footer p { margin: 0; }
   .primary-nav .nav-links { gap: 2px; }
   .primary-nav .nav-links a { padding-right: 3px; padding-left: 3px; font-size: .78rem; }
 }
+
+/* Wider, more readable layout for the club introduction */
+.club-container { width: min(100%, 1440px); }
+.club-content > h2 { max-width: none; margin-bottom: 28px; }
+.club-story { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 48px; }
+.club-story p { margin: 0; font-size: clamp(1.05rem, 1.4vw, 1.2rem); line-height: 1.8; }
+.club-story p:last-child { grid-column: 1 / -1; }
+@media (max-width: 760px) {
+  .club-story { grid-template-columns: 1fr; gap: 18px; }
+  .club-story p:last-child { grid-column: auto; }
+}
