@@ -134,7 +134,16 @@ p { margin-top: 0; }
 .membership-card h3 { color: var(--navy); }
 .membership-card p, .membership-detail p { color: var(--muted); }
 .membership-link { display: inline-block; margin-top: 16px; color: var(--blue); font-weight: 700; }
-.membership-detail { max-width: 800px; }
+.membership-detail-layout { display: grid; grid-template-columns: minmax(0,1fr) 320px; gap: clamp(24px,4vw,48px); align-items: start; }
+.membership-detail { max-width: none; }
+.coach-contact-card { margin-top: calc(clamp(52px,7vw,88px) + 20px); padding: 30px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
+.coach-contact-card h2 { margin-bottom: 18px; font-size: 1.5rem; }
+.coach-contact-card .coach-name { margin: 0 0 22px; color: var(--navy); font-size: 1.15rem; font-weight: 700; }
+.coach-contact-card dl { display: grid; gap: 16px; margin: 0; }
+.coach-contact-card dt { margin-bottom: 3px; color: var(--muted); font-size: .8rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+.coach-contact-card dd { margin: 0; overflow-wrap: anywhere; }
+.coach-contact-card a { color: var(--blue); font-weight: 700; text-decoration: none; }
+.coach-contact-card a:hover { text-decoration: underline; }
 .detail-list { margin: 14px 0 30px; padding-left: 23px; list-style: disc; color: var(--muted); }
 .detail-list li { margin-bottom: 8px; }
 .signup { padding: 0 0 80px; }
@@ -202,6 +211,7 @@ footer p { margin: 0; }
   .nav-links { gap: 14px; }
   .player-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
   .hall-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .membership-detail-layout { grid-template-columns: minmax(0,1fr) minmax(260px,320px); gap: 24px; }
   .contact-grid { grid-template-columns: 1fr; }
   .contact-info-card { position: static; }
 }
@@ -226,6 +236,8 @@ footer p { margin: 0; }
   .player-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px; }
   .player-card.pro { height: 220px; }
   .membership-options, .hall-grid { grid-template-columns: 1fr; }
+  .membership-detail-layout { grid-template-columns: 1fr; }
+  .coach-contact-card { margin-top: 0; }
   .hall-card { height: 350px; }
   .primary-btn { width: 100%; }
 }
